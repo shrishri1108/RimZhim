@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="20dp"
+    android:elevation="20dp"
+    app:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Winning Prize"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/room_id"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Room Id #145874"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toEndOf="@+id/textView1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/winngPriceAmountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="₹ 4 Lakh"
+            android:textColor="@color/blue"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <ProgressBar
+            android:id="@+id/ProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:max="100"
+            android:progress="50"
+            android:progressTint="@color/pink"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/winngPriceAmountTv" />
+
+
+
+        <TextView
+            android:id="@+id/totalContestantsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="40,00O Total Contestants"
+            android:textColor="#9F9C9C"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgressBar" />
+
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_timer_svg_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgressBar"
+            app:layout_constraintVertical_bias="0.846" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="bottom"
+            android:text="1:00 hrs"
+            android:textColor="#C4C4C4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/timeLeft"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toEndOf="@+id/imageView10" />
+
+        <TextView
+            android:id="@+id/timeLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="bottom|end"
+            android:text="Time Left 30:00 Mins"
+            android:textColor="@color/redcolor"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalContestantsCount" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

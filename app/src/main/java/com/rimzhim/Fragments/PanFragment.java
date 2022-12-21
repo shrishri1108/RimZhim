@@ -1,0 +1,425 @@
+package com.rimzhim.Fragments;
+
+import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.rimzhim.Adapters.spinStateAdapter;
+import com.rimzhim.BuildConfig;
+import com.rimzhim.ModelClasses.StateModel.ListItem;
+import com.rimzhim.ModelClasses.StateModel.StateModel;
+import com.rimzhim.ModelClasses.UploadKYCResponseModel;
+import com.rimzhim.Networking.ApiClient;
+import com.rimzhim.R;
+import com.rimzhim.SharedPres.loginResponsePref;
+import com.rimzhim.SimpleClasses.Functions;
+import com.rimzhim.SimpleClasses.PermissionUtils;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class PanFragment extends Fragment {
+
+    TextInputEditText date_of_birthET;
+    private int mYear, mMonth, mDay;
+    Dialog mdialog;
+    EditText fullName, uploadPan, panNum;
+    ArrayList<ListItem> stateList =new ArrayList<>();
+    AppCompatAutoCompleteTextView stateSpinner;
+    PermissionUtils takePermissionUtils;
+    File ImageFile;
+    Button saveBtn;
+
+
+
+    public PanFragment() {
+        // Required empty public constructor
+    }
+
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_pan, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        takePermissionUtils=new PermissionUtils(getActivity(),mPermissionResult);
+
+        date_of_birthET =(TextInputEditText)view.findViewById(R.id.date_of_birthET);
+        fullName =(EditText)view.findViewById(R.id.fullName);
+        uploadPan =(EditText)view.findViewById(R.id.uploadPan);
+        panNum =(EditText)view.findViewById(R.id.panNum);
+        saveBtn =(Button)view.findViewById(R.id.saveBtn);
+
+        stateSpinner =(AppCompatAutoCompleteTextView)view.findViewById(R.id.stateSpinner);
+        stateSpinner.setFocusable(false);
+        date_of_birthET.setFocusable(false);
+        uploadPan.setFocusable(false);
+
+
+        mdialog = new Dialog(getContext());
+        date_of_birthET.setOnClickListener(view1 -> {
+            if (view1 == date_of_birthET) {
+                final Calendar calendar = Calendar.getInstance ();
+                mYear = calendar.get ( Calendar.YEAR );
+                mMonth = calendar.get ( Calendar.MONTH );
+                mDay = calendar.get ( Calendar.DAY_OF_MONTH );
+
+                //show dialog
+                DatePickerDialog datePickerDialog = new DatePickerDialog ( getContext(), new DatePickerDialog.OnDateSetListener () {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        date_of_birthET.setText ( dayOfMonth + "/" + (month + 1) + "/" + year );
+                    }
+                }, mYear, mMonth, mDay );
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                datePickerDialog.show ();
+
+            }
+
+        });
+
+        loadStateList();
+
+        uploadPan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (takePermissionUtils.isStorageCameraPermissionGranted()) {
+                    selectImage();
+                }
+                else
+                {
+                    takePermissionUtils.
+                            showStorageCameraPermissionDailog(getString(R.string.we_need_storage_and_camera_permission_for_upload_profile_pic));
+                }
+
+            }
+        });
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                uploadPanCard(ImageFile);
+            }
+        });
+
+
+    }
+
+    private void loadStateList() {
+        Call<StateModel> call = ApiClient.getUserService().LoadStateList();
+        call.enqueue(new Callback<StateModel>() {
+            @Override
+            public void onResponse(Call<StateModel> call, Response<StateModel> response) {
+                if (response.isSuccessful()) {
+                    if (response.body().isResult() == true) {
+                        stateList = response.body().getList();
+                        spinStateAdapter spinStateAdapter = new spinStateAdapter(getContext(), 1, getContext().getApplicationContext(), android.R.layout.simple_spinner_item, stateList, true);
+                        stateSpinner.setAdapter(spinStateAdapter);
+
+                        stateSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                stateSpinner.setText(stateList.get(i).getName());
+                                //stateId = String.valueOf(stateList.get(i).getId());
+
+                            }
+                        });
+
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<StateModel> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    // this method will show the dialog of selete the either take a picture form camera or pick the image from gallary
+    private void selectImage() {
+        final CharSequence[] options = {getString(R.string.take_photo),
+                getString(R.string.choose_from_gallery), "Cancel"};
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.AlertDialogCustom);
+
+        builder.setTitle(getString(R.string.add_photo_));
+
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+
+                if (options[item].equals(getString(R.string.take_photo))) {
+                    openCameraIntent();
+                } else if (options[item].equals(getString(R.string.choose_from_gallery))) {
+                    Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    resultCallbackForGallery.launch(intent);
+                } else if (options[item].equals("Cancel")) {
+
+                    dialog.dismiss();
+
+                }
+
+            }
+
+
+        });
+
+        builder.show();
+
+    }
+
+    String imageFilePath;
+
+    private void openCameraIntent() {
+        Intent pictureIntent = new Intent(
+                MediaStore.ACTION_IMAGE_CAPTURE);
+        if (pictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (Exception ex) {
+            }
+            if (photoFile != null) {
+              /*  Uri photoURI = FileProvider.getUriForFile(getActivity(), getPackageName()+".fileprovider", photoFile);
+                pictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);*/
+
+                Uri photoURI=   FileProvider.getUriForFile(requireContext().getApplicationContext(),
+                        BuildConfig.APPLICATION_ID + ".fileprovider", photoFile);
+                pictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+
+                resultCallbackForCamera.launch(pictureIntent);
+            }
+        }
+    }
+
+    private File createImageFile() throws Exception {
+        String timeStamp =
+                new SimpleDateFormat("yyyyMMdd_HHmmss",
+                        Locale.ENGLISH).format(new Date());
+        String imageFileName = "IMG_" + timeStamp + "_";
+        File storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,
+                ".jpg",
+                storageDir
+        );
+
+        imageFilePath = image.getAbsolutePath();
+        return image;
+    }
+
+    ActivityResultLauncher<Intent> resultCallbackForCrop = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        CropImage.ActivityResult cropResult = CropImage.getActivityResult(data);
+                       // handleCrop(cropResult.getUri());
+                       //
+                        setImageName(cropResult.getUri());
+                    }
+                }
+            });
+
+    private void setImageName(Uri uri) {
+        ImageFile = new File(uri.getPath());
+        uploadPan.setText(ImageFile.getName());
+
+    }
+
+    ActivityResultLauncher<Intent> resultCallbackForCamera = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Matrix matrix = new Matrix();
+                        try {
+                            ExifInterface exif = new ExifInterface(imageFilePath);
+                            int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
+                            switch (orientation) {
+                                case ExifInterface.ORIENTATION_ROTATE_90:
+                                    matrix.postRotate(90);
+                                    break;
+                                case ExifInterface.ORIENTATION_ROTATE_180:
+                                    matrix.postRotate(180);
+                                    break;
+                                case ExifInterface.ORIENTATION_ROTATE_270:
+                                    matrix.postRotate(270);
+                                    break;
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        Uri selectedImage = (Uri.fromFile(new File(imageFilePath)));
+                        beginCrop(selectedImage);
+                    }
+                }
+            });
+
+    private ActivityResultLauncher<String[]> mPermissionResult = registerForActivityResult(
+            new ActivityResultContracts.RequestMultiplePermissions(), new ActivityResultCallback<Map<String, Boolean>>() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
+                @Override
+                public void onActivityResult(Map<String, Boolean> result) {
+                    boolean allPermissionClear=true;
+                    List<String> blockPermissionCheck=new ArrayList<>();
+                    for (String key : result.keySet())
+                    {
+                        if (!(result.get(key)))
+                        {
+                            allPermissionClear=false;
+                            blockPermissionCheck.add(Functions.getPermissionStatus(getActivity(),key));
+                        }
+                    }
+                    if (blockPermissionCheck.contains("blocked"))
+                    {
+                        Functions.showPermissionSetting(getContext(),getString(R.string.we_need_storage_and_camera_permission_for_upload_profile_pic));
+                    }
+                    else
+                    if (allPermissionClear)
+                    {
+                        selectImage();
+                    }
+
+                }
+            });
+
+    ActivityResultLauncher<Intent> resultCallbackForGallery = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        Uri selectedImage = data.getData();
+                        beginCrop(selectedImage);
+
+                    }
+                }
+            });
+
+
+    private void beginCrop(Uri source) {
+        Intent intent= CropImage.activity(source).setCropShape(CropImageView.CropShape.RECTANGLE)
+                .setAspectRatio(1,1).getIntent(getActivity());
+        resultCallbackForCrop.launch(intent);
+    }
+
+    private void uploadPanCard(File ImageFile) {
+        final String PanNumber = panNum.getText().toString().trim();
+        final String Name = fullName.getText().toString().trim();
+        final String DateOfBirth = date_of_birthET.getText().toString().trim();
+        final String State =stateSpinner.getText().toString().trim();
+        final String UploadPan = uploadPan.getText().toString().trim();
+
+        if(TextUtils.isEmpty(Name)){
+            fullName.setError("Enter Full Name");
+            fullName.requestFocus();
+            return;
+        }
+        if(TextUtils.isEmpty(PanNumber)){
+            panNum.setError("Enter Pan Number");
+            panNum.requestFocus();
+            return;
+        }
+        if(TextUtils.isEmpty(DateOfBirth)){
+            date_of_birthET.setError("Enter Date Of Birth");
+            date_of_birthET.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(UploadPan)){
+            Toast.makeText(getContext(),"Add Pan Image", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(TextUtils.isEmpty(State)){
+            Toast.makeText(getContext(),"Select State", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String tokenT =  loginResponsePref.getInstance(getContext()).getToken();
+        RequestBody requestFile = RequestBody.create(MediaType.parse("pan_card"), ImageFile);
+        MultipartBody.Part body = MultipartBody.Part.createFormData("pan_card", ImageFile.getName(), requestFile);
+        RequestBody token = RequestBody.create(MediaType.parse("token"), tokenT);
+        RequestBody pan_no = RequestBody.create(MediaType.parse("pan_no"), PanNumber);
+        RequestBody type = RequestBody.create(MediaType.parse("type"), "pan");
+        RequestBody name = RequestBody.create(MediaType.parse("name"), Name);
+        RequestBody state = RequestBody.create(MediaType.parse("state"), State);
+        RequestBody dob = RequestBody.create(MediaType.parse("dob"), DateOfBirth);
+
+        Functions.showProgressDialog(getContext());
+
+        Call<UploadKYCResponseModel> call =ApiClient.getUserService().UploadKYC(token,pan_no,type,body,name,state, dob);
+        call.enqueue(new Callback<UploadKYCResponseModel>() {
+            @Override
+            public void onResponse(Call<UploadKYCResponseModel> call, Response<UploadKYCResponseModel> response) {
+                if(response.isSuccessful()){
+                    Functions.dismissProgressDialog();
+                    Toast.makeText(getContext(),response.body().getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<UploadKYCResponseModel> call, Throwable t) {
+                Functions.dismissProgressDialog();
+                Toast.makeText(getContext(),"Throwable "+t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
+}

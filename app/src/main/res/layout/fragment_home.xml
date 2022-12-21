@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:background="@color/black"
+    android:id="@+id/swiperefresh"
+tools:context=".Fragments.HomeFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <fr.castorflex.android.verticalviewpager.VerticalViewPager
+            android:id="@+id/viewpager"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@color/black"
+            android:orientation="vertical" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/shimmer"
+            >
+            <include
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                layout="@layout/shimmer_video_layout"/>
+
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/tabNoFollower"
+            android:background="@color/black"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/top_btn_layout">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/following"
+                    android:id="@+id/following_btn"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    android:padding="@dimen/_12sdp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:ellipsize="end"
+                    android:shadowRadius="3"
+                    android:textColor="@color/graycolor2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/related"
+                    android:id="@+id/related_btn"
+                    android:textSize="@dimen/_13sdp"
+                    android:padding="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="3"
+                    android:ellipsize="end"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/live_users"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:text="@string/live_users"
+                android:textSize="@dimen/_13sdp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="3"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/top_btn_layout"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:id="@+id/upload_video_layout"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:id="@+id/uploading_thumb"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:alpha="0.6"/>
+
+
+           <!-- <ProgressBar
+                android:layout_centerInParent="true"
+                android:id="@+id/progressBar"
+                style="?android:progressBarStyleHorizontal"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:max="100"
+                android:progressDrawable="@drawable/circle_progress"
+                android:indeterminate="false"
+                android:progress="0" />-->
+
+
+            <TextView
+                android:id="@+id/tvProgressCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:text=""
+                android:includeFontPadding="false"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/_15sdp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="3"
+                android:textColor="@color/white"
+
+                />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabGravity="center"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorHeight="4dp"
+        app:tabSelectedTextColor="@color/pink"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="@color/white">
+    </com.google.android.material.tabs.TabLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+

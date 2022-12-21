@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:id="@+id/refreshPage"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".Fragments.ContestsFragment"
+android:background="@color/graycolor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="164dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorColor="@color/pink"
+        app:tabIndicatorHeight="4dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:tabSelectedTextColor="@color/pink"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabTextColor="@color/black">
+
+
+        <!--
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/upComingTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Up coming"
+
+            android:textAlignment="center" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/liveTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Live" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/completedTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completed" />-->
+    </com.google.android.material.tabs.TabLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:scrollbarSize="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        app:layout_constraintVertical_bias="0.65999997">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/shortBy"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:text="Sort By:"
+                android:textAllCaps="false"
+                android:textColor="#797979"
+                android:textSize="13sp"
+                app:strokeWidth="0dp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/priceBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:text="price"
+                android:textColor="#797979"
+                android:textSize="13sp"
+                app:strokeWidth="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/joiningAmountBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:text="JOINING AMOUNT"
+                android:textColor="#797979"
+                android:textSize="13sp"
+                app:strokeWidth="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/participantsBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:text="PARTICIPANTS"
+                android:textColor="#797979"
+                android:textSize="13sp"
+                app:strokeWidth="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/createVideoBtn"
+                android:padding="8dp"
+                app:icon="@drawable/ic_contest_filter_icon"
+                app:iconTint="@color/graycolor"
+                android:background="@android:color/transparent"
+                android:gravity="bottom"
+                />
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.viewpager2.widget.ViewPager2
+    android:id="@+id/videoViewPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="170dp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+    app:layout_constraintVertical_bias="1.0"
+  />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".fragments.MyContests.My_ContestFragment">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="4dp"
+            app:tabIndicatorColor="@color/pink"
+            app:tabSelectedTextColor="@color/pink"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
+            app:tabTextColor="@color/black">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/upComingTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Up coming"
+
+                android:textAlignment="center" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/liveTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Live" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/completedTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completed" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scrollbarSize="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/shortBy"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="Sort By:"
+                    android:textAllCaps="false"
+                    android:textColor="#797979"
+                    android:textSize="13sp"
+                    app:strokeWidth="0dp" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/priceBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="price"
+                    android:textColor="#797979"
+                    android:textSize="13sp"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/joiningAmountBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="JOINING AMOUNT"
+                    android:textColor="#797979"
+                    android:textSize="13sp"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/participantsBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="PARTICIPANTS"
+                    android:textColor="#797979"
+                    android:textSize="13sp"
+                    app:strokeWidth="0dp" />
+
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/videoViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    -->

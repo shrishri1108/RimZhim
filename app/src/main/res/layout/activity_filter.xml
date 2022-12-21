@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
+    android:orientation="vertical">
+   <!-- <include layout="@layout/partial_header" />-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/changebackIV"
+            android:layout_width="36dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoeuib"
+            android:src="@drawable/arrow_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/create_passwordTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/seguisb"
+            android:text="Filters"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.daasuu.gpuv.player.GPUPlayerView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:resize_mode="fixed_width"
+            app:use_controller="false" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <LinearLayout
+        android:id="@+id/editingOptions"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+         android:weightSum="5"
+        android:paddingStart="2dp"
+        android:paddingEnd="3dp"
+        android:background="#338C8C8C">
+
+        <LinearLayout
+            android:id="@+id/effectLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@drawable/ic_filter_icon_svg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Effects"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:ignore="NotSibling">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@drawable/ic_a_icon_svg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Text"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stickersLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="NotSibling">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:id="@+id/StickerBtn"
+                android:src="@drawable/ic_sticker_icon_svg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Stickers"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="NotSibling"
+            android:id="@+id/MusicBtn">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@drawable/ic_music_icon_svg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Music"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

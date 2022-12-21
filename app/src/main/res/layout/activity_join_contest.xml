@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.JoinContestActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/changebackIV"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/segoeuib"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/create_passwordTV"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/seguisb"
+            android:text="Join Contest"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout9"
+        android:layout_marginTop="10dp"
+
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Winning Prize"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView126"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Entry"
+                android:textSize="18sp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/contestsAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/green"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="2dp"
+                android:text="₹500"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.99"
+                app:layout_constraintStart_toEndOf="@+id/winngPriceAmountTv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/winngPriceAmountTv"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="₹ 4 Lakh"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.029"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+            <ProgressBar
+                android:id="@+id/ProgressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:max="100"
+                android:progressTint="@color/pink"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/winngPriceAmountTv" />
+
+            <TextView
+                android:id="@+id/contestantsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#E91E63"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/totalContestantsCount"
+                app:layout_constraintHorizontal_bias="0.109"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProgressBar" />
+
+            <TextView
+                android:id="@+id/totalContestantsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#9F9C9C"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProgressBar" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="40dp"
+                android:background="@color/gray_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/contestantsCount" />
+
+
+           <!-- <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="start"
+                android:text="Winnings"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.03"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contestantsCount" />
+-->
+           <!-- <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Rank"
+                android:textColor="@color/graycolor"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />-->
+
+         <!--   <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:gravity="center"
+                android:text="Winnings"
+                android:textColor="@color/graycolor"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.948"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/totalContestantsCount" />
+
+-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+   <!-- <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomBtnLL"
+        android:layout_below="@+id/cardView"
+        android:layout_marginTop="3dp"
+        android:background="@color/white" />-->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        app:tabGravity="center"
+        android:layout_below="@+id/cardView"
+        android:layout_marginTop="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorHeight="4dp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="@color/graycolor">
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/ViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomBtnLL"
+        android:layout_below="@+id/tabLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/white"
+        android:orientation="horizontal"/>
+
+    <LinearLayout
+        android:id="@+id/bottomBtnLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-3dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/playContestBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/pink"
+            android:elevation="5dp"
+            android:text="Join Contest"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/pink"
+            app:strokeWidth="1dp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+</layout>

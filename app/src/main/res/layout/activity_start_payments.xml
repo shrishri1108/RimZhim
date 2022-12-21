@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentGateway.StartPayments"
+        android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/changebackIV"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/segoeuib"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/create_passwordTV"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/seguisb"
+            android:text="Add Cash"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/amountTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="40dp"
+        android:hint="Enter Amount"
+        android:textColorHint="@color/black"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="#F1F1F1"
+        app:boxStrokeWidth="0.5dp"
+        app:hintTextColor="#8C8989"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+     >
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/segoeui"
+            android:maxLength="50"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView40" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/StartPaymentBtn"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/coustom_button"
+        android:fontFamily="@font/seguisb"
+        android:text="Start Payment"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:backgroundTint="@null"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/amountTIL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        />
+
+        <ProgressBar
+            android:id="@+id/ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.299" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

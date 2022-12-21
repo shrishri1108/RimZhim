@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Activities.Otp_Verification">
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/changebackIV"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/segoeuib"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_back" />
+
+
+        <!--<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fontFamily="@font/seguisb"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:background="#C4C4C4"
+            android:layout_marginTop="46dp"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fontFamily="@font/seguisb"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:background="#C4C4C4"
+            android:layout_marginTop="47dp"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fontFamily="@font/seguisb"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:background="#C4C4C4"
+            android:layout_marginTop="47dp"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fontFamily="@font/seguisb"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1.5dp"
+            android:background="#C4C4C4"
+            android:layout_marginTop="47dp"
+            />
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>-->
+
+        <TextView
+            android:id="@+id/otpTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="64dp"
+            android:fontFamily="@font/segoeuib"
+            android:text="Otp Verification"
+            android:textColor="@color/black"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/receiveTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/segoeuib"
+            android:text="Enter the otp Received on "
+            android:textColor="#7B7B7B"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.119"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otpTV" />
+
+        <TextView
+            android:id="@+id/mobilenumberTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoeuib"
+            android:gravity="center"
+            android:text="91 9999999999 "
+            android:textColor="#7B7B7B"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/receiveTV" />
+        <!--  <EditText
+    android:id="@+id/otp1EDT"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="50dp"
+    android:gravity="center"
+               android:maxLength="1"
+            android:inputType="number"
+               android:nextFocusRight="@id/otp2EDT"
+            app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/mobilenumberTV" />
+
+<EditText
+    android:id="@+id/otp2EDT"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="38dp"
+    android:layout_marginTop="50dp"
+    android:gravity="center"
+    android:maxLength="1"
+    android:inputType="number"
+    android:nextFocusRight="@id/otp3EDT"
+    app:layout_constraintStart_toEndOf="@+id/otp1EDT"
+    app:layout_constraintTop_toBottomOf="@+id/mobilenumberTV" />
+
+<EditText
+    android:id="@+id/otp4EDT"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="38dp"
+    android:layout_marginTop="50dp"
+    android:gravity="center"
+    android:inputType="number"
+    app:layout_constraintStart_toEndOf="@+id/otp3EDT"
+    app:layout_constraintTop_toBottomOf="@+id/mobilenumberTV" />
+
+<EditText
+    android:id="@+id/otp3EDT"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="50dp"
+    android:layout_marginStart="38dp"
+    android:gravity="center"
+    android:maxLength="1"
+    android:inputType="number"
+    android:nextFocusRight="@id/otp4EDT"
+
+    app:layout_constraintStart_toEndOf="@+id/otp2EDT"
+    app:layout_constraintTop_toBottomOf="@+id/mobilenumberTV" />
+
+
+
+-->
+
+
+        <com.chaos.view.PinView
+            android:id="@+id/pin_view"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:cursorVisible="true"
+            android:inputType="number"
+            android:itemBackground="#65EAEAEA"
+            app:cursorColor="@color/black"
+            app:hideLineWhenFilled="true"
+            app:itemCount="4"
+            app:itemHeight="50dp"
+            app:itemRadius="5dp"
+            app:itemSpacing="35dp"
+            app:itemWidth="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mobilenumberTV"
+            app:lineColor="@color/black"
+            app:lineWidth="1dp" />
+
+
+        <TextView
+            android:id="@+id/forget_passTV"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginBottom="468dp"
+            android:fontFamily="@font/segoeui"
+            android:gravity="center"
+            android:text="Don't Receive Otp "
+            android:textColor="#C4C4C4"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.102"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pin_view" />
+
+        <TextView
+            android:id="@+id/resendTV"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginBottom="468dp"
+            android:fontFamily="@font/segoeui"
+            android:gravity="center"
+            android:text="Resend "
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pin_view" />
+
+        <Button
+            android:id="@+id/verify_otp_buttonBTN"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/coustom_button"
+            android:fontFamily="@font/seguisb"
+            android:text="Verify OTP"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forget_passTV" />
+
+        <!--<LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="413dp">
+
+            <LinearLayout
+                android:layout_width="25dp"
+                android:layout_height="25dp">
+
+                <CheckBox
+                    android:id="@+id/checkbox_meat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="OnClick" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/seguisb"
+                android:text="I agree to "
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/seguisb"
+                android:text="Term to uses "
+                android:textColor="#2196F3"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/seguisb"
+                android:text=" and "
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/seguisb"
+                android:text="Privacy Policy "
+                android:textColor="#2196F3"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

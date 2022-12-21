@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:resize_mode="fixed_width"
+            app:use_controller="false" />
+
+        <View
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="false"
+            tools:ignore="KeyboardInaccessibleWidget" />
+
+        <ImageButton
+            android:id="@+id/play"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:contentDescription="@string/play_button"
+            android:focusable="true"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_play"
+            tools:ignore="KeyboardInaccessibleWidget"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/report"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_report"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/report"
+            android:layout_marginHorizontal="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_delete"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:background="@drawable/bg_clip_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/badge"
+                        android:layout_width="50dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="5dp"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/photo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentTop="true"
+                            app:placeholderImage="@drawable/photo_placeholder"
+                            app:roundAsCircle="true"
+                            app:roundingBorderColor="@color/colorProfileBadge"
+                            app:roundingBorderWidth="2dp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:srcCompat="@drawable/ic_profile_badge"
+                            tools:ignore="ContentDescription" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <TextView
+                            android:id="@+id/username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:text="\@username"
+                            style="@style/TextOnShadow" />
+
+                        <ImageView
+                            android:id="@+id/verified"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            app:srcCompat="@drawable/ic_verified_badge"
+                            app:tint="@color/colorAccent"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        tools:text="This is a great app @clip worth #watching."
+                        style="@style/TextOnShadow" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="5dp"
+                            app:srcCompat="@drawable/ic_baseline_music_note_24"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/song"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="marquee"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            tools:text="User's original sound."
+                            style="@style/TextOnShadow" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    tools:ignore="RelativeOverlap">
+
+                    <CheckBox
+                        android:id="@+id/like"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:button="@null"
+                        android:checked="false"
+                        android:background="@drawable/bg_button_like"
+                        android:stateListAnimator="@animator/scale" />
+
+                    <TextView
+                        android:id="@+id/likes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@android:color/white"
+                        tools:text="0"
+                        style="@style/TextOnShadow" />
+
+                    <ImageButton
+                        android:id="@+id/comment"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/ic_button_comment"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/comments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@android:color/white"
+                        tools:text="0"
+                        style="@style/TextOnShadow" />
+
+                    <ImageButton
+                        android:id="@+id/share"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/ic_baseline_share_24_shadow"
+                        tools:ignore="ContentDescription" />
+
+                    <CheckBox
+                        android:id="@+id/save"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="10dp"
+                        android:button="@null"
+                        android:checked="false"
+                        android:background="@drawable/bg_button_save"
+                        android:stateListAnimator="@animator/scale" />
+
+                    <ImageView
+                        android:id="@+id/disc"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/music_record"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:visibility="gone"
+                    app:chipSpacing="8dp"
+                    app:singleLine="true"
+                    tools:visibility="visible" />
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.ProgressIndicator
+            android:id="@+id/buffering"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:indeterminateOnly="true"
+            app:indicatorColor="@android:color/white"
+            app:trackColor="#11ffffff"
+            style="@style/Widget.MaterialComponents.ProgressIndicator.Linear.Indeterminate" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

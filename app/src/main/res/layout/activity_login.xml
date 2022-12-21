@@ -1,0 +1,273 @@
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Login_Activity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/loginTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/segoeuib"
+                android:text="Login "
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mNameTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="40dp"
+                android:hint="User Name"
+                android:textColorHint="@color/black"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="#F1F1F1"
+                app:boxStrokeWidth="0.5dp"
+                app:hintTextColor="#8C8989"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginTV">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="100dp"
+                    android:fontFamily="@font/segoeui"
+                    android:maxLength="50"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView40" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:hint="Password "
+                android:textColorHint="@color/black"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="#F1F1F1"
+                app:boxStrokeWidth="0.5dp"
+                app:endIconMode="password_toggle"
+                app:hintTextColor="#8C8989"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mNameTIL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="65dp"
+                    android:fontFamily="@font/segoeui"
+                    android:inputType="textPassword"
+                    android:maxLength="50"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/logout_button2BTN" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/forget_passTV"
+                android:layout_width="130dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/segoeui"
+                android:gravity="center"
+                android:text="Forget password?"
+                android:textColor="#C4C4C4"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.857"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordTIL" />
+
+            <Button
+
+                android:id="@+id/login_buttonBTN"
+                android:layout_width="330dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="64dp"
+                android:background="@drawable/coustom_button"
+                android:fontFamily="@font/seguisb"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordTIL" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="325dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_buttonBTN">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/segoeui"
+                    android:gravity="center"
+                    android:text="Don't have an account?"
+                    android:textColor="#C4C4C4"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/sign_up_loginTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/segoeui"
+                    android:gravity="center"
+                    android:text="Sign up"
+                    android:textColor="#C4C4C4"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mobile_signCV"
+                android:layout_width="325dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:elevation="30dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/phoneIV"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="25dp"
+                        android:src="@drawable/call_img" />
+
+                    <TextView
+                        android:id="@+id/signUp_mobileTV"
+                        android:layout_width="250dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Sign up with mobile number "
+                        android:textColor="#C4C4C4"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/gmail_signIV"
+                android:layout_width="325dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:elevation="30dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mobile_signCV">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/gmailIV"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/logo_google" />
+
+                    <TextView
+                        android:id="@+id/signup_gmailTV"
+                        android:layout_width="230dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Sign up with gmail account "
+                        android:textColor="#C4C4C4"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

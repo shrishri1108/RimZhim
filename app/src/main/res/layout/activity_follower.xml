@@ -1,0 +1,102 @@
+<layout
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.followerActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/changebackIV"
+                android:layout_width="36dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/segoeuib"
+                android:src="@drawable/arrow_back" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/seguisb"
+                android:text="User Name"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tablayout"
+                app:tabTextAppearance="@style/TabLayoutTextStyle"
+                android:background="@color/white"
+                app:tabSelectedTextColor="@color/black"
+                app:tabPadding="10dp"
+                app:tabIndicatorFullWidth="false"
+                app:tabInlineLabel="true"
+                app:tabIndicatorHeight="3.5dp"
+                app:tabIndicatorColor="@color/black">
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/followersTab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Followers"
+                    android:textAlignment="center" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/followingTab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Following"
+                    android:textAlignment="center"
+                    />
+
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/viewPager"/>
+
+
+        </LinearLayout>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

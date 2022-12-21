@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Chats.ChatActivity">
+
+       <!-- <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >-->
+
+        <LinearLayout
+            android:id="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/BackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/_10sdp"
+                android:src="@drawable/arrow_back" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user_icon"
+                app:civ_circle_background_color="@color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameptv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="HisName"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/onlinetv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/block"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="5dp" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatrecycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/chatlayout"
+            android:layout_below="@id/toolbar" />
+
+        <LinearLayout
+            android:id="@+id/chatlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/messaget"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Start Typing"
+                android:inputType="textCapSentences|textMultiLine"
+                android:padding="15dp" />
+            <ImageButton
+                android:id="@+id/emojiBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+               android:padding="5dp"
+                android:src="@drawable/ic_baseline_emoji_emotions_24" />
+            <ImageButton
+                android:id="@+id/galleryBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:padding="5dp"
+                android:src="@drawable/ic_gallery_icon_svg" />
+
+            <ImageButton
+                android:id="@+id/cameraBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:padding="5dp"
+                android:src="@drawable/ic_camera_msg_icon_svg" />
+
+            <ImageView
+                android:id="@+id/sendmsg"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_send_msg_icon_svg" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
+

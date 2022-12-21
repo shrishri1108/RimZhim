@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.PanFragment">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/panTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PAN Verification"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/fullName"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@+id/panTv"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_border"
+        android:gravity="center_vertical"
+        android:hint="Enter Full Name"
+        android:padding="10sp"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/nameTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fullName"
+        android:layout_marginTop="5dp"
+        android:text="@string/Your_name_must_match"
+        android:textColor="@color/graycolor"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/stateTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="State"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_below="@+id/nameTv"
+        android:layout_marginTop="10sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_below="@+id/stateTv"
+      >
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:id="@+id/stateSpinner"
+            android:textColor="@color/black"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/dobtv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date of Birth"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_below="@id/textInputLayout2"
+        android:layout_marginTop="10sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/date_of_birthTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DOB "
+        android:textColorHint="@color/black"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="#F1F1F1"
+        app:boxStrokeWidth="0.5dp"
+        app:hintTextColor="#8C8989"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       android:layout_below="@id/dobtv">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/date_of_birthET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:fontFamily="@font/segoeui"
+            android:maxLength="50"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:inputType="none"
+            android:imeOptions="actionNext"
+            android:drawableEnd="@drawable/date_picker"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/logout_button2BTN" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/dtTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_of_birthTIL"
+        android:layout_marginTop="5dp"
+        android:text="Please enter your DOB as mention on your pan card."
+        android:textColor="@color/graycolor"
+        android:textSize="10sp"
+        />
+
+    <TextView
+        android:id="@+id/panNoTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dtTv"
+        android:text="PAN Number"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/panNum"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@+id/panNoTv"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_border"
+        android:gravity="center_vertical"
+        android:hint="Enter Pan Number"
+        android:padding="10sp"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/pantv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/panNum"
+        android:layout_marginTop="10sp"
+        android:text="Upload PAN Card"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/uploadPan"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@+id/pantv"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/des_edit_text_border"
+        android:gravity="center_vertical"
+        android:padding="10sp"
+        android:textSize="10sp"
+        android:drawableEnd="@drawable/ic_gallery_icon_svg"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveBtn"
+        android:layout_width="188dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/uploadPan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#FF6077"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="10dp" />
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
+
+</ScrollView>

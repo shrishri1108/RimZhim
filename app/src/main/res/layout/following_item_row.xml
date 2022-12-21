@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userRow">
+
+
+<com.google.android.material.imageview.ShapeableImageView
+    android:id="@+id/userImg"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:background="@android:color/transparent"
+    android:padding="5dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:shapeAppearance="@style/roundImg"
+    tools:srcCompat="@drawable/profile_photo_img" />
+
+
+<TextView
+    android:id="@+id/userName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="User Name"
+    android:textColor="@color/black"
+    android:textSize="12sp"
+    android:textStyle="bold"
+    android:layout_marginStart="10dp"
+    app:layout_constraintHorizontal_bias="0.036"
+    app:layout_constraintStart_toEndOf="@+id/userImg"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/fullName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:gravity="center_vertical"
+    android:text="Full Name"
+    android:textSize="12sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/userImg"
+    app:layout_constraintTop_toBottomOf="@+id/userName"
+    app:layout_constraintVertical_bias="0.0" />
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/followingBtn"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:backgroundTint="@color/pink"
+    android:text="Follow"
+    android:textAllCaps="false"
+    android:textColor="@color/white"
+    android:textSize="10sp"
+    app:cornerRadius="5dp"
+    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    android:layout_marginEnd="20dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.965"
+    app:layout_constraintStart_toEndOf="@+id/userName"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.511"
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

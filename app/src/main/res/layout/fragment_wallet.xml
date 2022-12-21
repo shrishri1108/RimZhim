@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Fragments.WalletFragment"
+    android:id="@+id/refreshPage"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/changebackIV"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/segoeuib"
+            android:src="@drawable/ic_wallet_icon_svg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/forgot_passwordTV"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoeuib"
+            android:text="Wallet"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/changebackIV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/changebackIV"
+            app:layout_constraintTop_toTopOf="@+id/changebackIV" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_passwordTV">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="Total Cash"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/openTransactionHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="Transaction History"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                    app:layout_constraintEnd_toStartOf="@+id/goTransactionArrow"
+                    app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+                <ImageView
+                    android:id="@+id/goTransactionArrow"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginEnd="16dp"
+                    android:padding="2dp"
+                    android:src="@drawable/vector_arrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/openTransactionHistory"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/openTransactionHistory"
+                    app:tint="@color/black" />
+
+                <ImageView
+                    android:id="@+id/imageView20"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/green_rupee"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                <TextView
+                    android:id="@+id/showAmount"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="₹ 0"
+                    android:textColor="@color/black"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.037"
+                    app:layout_constraintStart_toEndOf="@+id/imageView20"
+                    app:layout_constraintTop_toBottomOf="@+id/openTransactionHistory" />
+
+
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="44dp"
+                    android:src="@drawable/bank"
+                    android:padding="5dp"
+                    android:background="#E5F6FE"
+                    app:layout_constraintStart_toStartOf="@+id/imageView20"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center"
+                    android:text="Cash Deposit"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/addCashBtn"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/imageView21"
+                    app:layout_constraintTop_toTopOf="@+id/imageView21" />
+
+
+                <TextView
+                    android:id="@+id/showWinningCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="₹ 0"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+                    app:layout_constraintStart_toStartOf="@+id/textView12"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="132dp"
+                    android:src="@drawable/crown"
+                    android:padding="5dp"
+                    android:background="#FFF9E1"
+                    app:layout_constraintStart_toStartOf="@+id/imageView21"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="112dp"
+                    android:text="Winnigs"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/addCashBtn"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/imageView21"
+                    app:layout_constraintTop_toBottomOf="@+id/showAmount" />
+
+
+                <TextView
+                    android:id="@+id/showDepositCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="₹ 0"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView21"
+                    app:layout_constraintStart_toStartOf="@+id/textView11"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addCashBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Add Cash"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green"
+                    android:textSize="13sp"
+                    app:icon="@drawable/ic_baseline_add_24"
+                    app:iconGravity="start"
+                    app:iconTint="@color/green"
+                    app:layout_constraintBottom_toBottomOf="@+id/showDepositCash"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView11"
+                    app:strokeColor="@color/green"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/withdrawalBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Withdrawal"
+                    android:textColor="@color/green"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="@+id/showWinningCash"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView12"
+                    app:strokeColor="@color/green"
+                    app:strokeWidth="1dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/offer_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

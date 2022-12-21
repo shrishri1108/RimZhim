@@ -1,0 +1,151 @@
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.editProfileActivity"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/changebackIV"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/segoeuib"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/create_passwordTV"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/seguisb"
+            android:text="Edit Profile"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mNameTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColorHint="@color/black"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="#F1F1F1"
+        app:boxStrokeWidth="0.5dp"
+        app:hintTextColor="#8C8989"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9"
+        app:layout_constraintVertical_bias="0.050000012">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fullNameET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/segoeui"
+            android:maxLength="50"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView40" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bioTIL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:hint="Add Bio"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:textColorHint="@color/black"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="#F1F1F1"
+        app:boxStrokeWidth="0.5dp"
+        app:hintTextColor="#8C8989"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mNameTIL"
+        app:layout_constraintVertical_bias="0.060000002">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/bioET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/segoeui"
+            android:maxLength="80"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:gravity="top"
+            android:maxLines="4"
+            android:inputType="textLongMessage|textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView40" />
+
+
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/saveBTN"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/coustom_button"
+        android:fontFamily="@font/seguisb"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bioTIL"
+        app:layout_constraintVertical_bias="0.85" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

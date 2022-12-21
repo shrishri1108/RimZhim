@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rimzhim">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:name=".SimpleClasses.RimZhim"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RimZhim"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Chat.SeeFullImageA"
+            android:exported="false" />
+        <activity
+            android:name=".FirebaseChat.ChatActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Chats.SendImgActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Chats.ViewImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Chat.ChatA"
+            android:exported="false" />
+        <activity
+            android:name=".Chats.ChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PaymentGateway.WithdrawalCashActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.TrasactionHistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.SingleVideoActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.TotalBalanceActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.VideoGalleryActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".PaymentGateway.StartPayments"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.NoInternetA"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.ShareRoomIdActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.SoundListActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".WatchProfileVideos.WatchUserProfileVideoActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.OtherUserProfileActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.contactUsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.helpActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.tramsAndConditionActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.privacyPolicyActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.InboxActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.KYCActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.notificationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.editProfileActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.followerActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.SettingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.videorecorder.activity.FilterActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!--
+ <activity
+            android:name=".Activities.videorecorder.activity.RecorderActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        -->
+        <activity
+            android:name=".Activities.videorecorder.activity.TrimmerActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.videorecorder.activity.UploadActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.JoinContestActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.leaderBordActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".OnBordingScreen.onBordingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.Create_New_Password"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.videorecorder.activity.RecorderActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Forgot_Password_Verify"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Forgot_Password"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Otp_Verification_Gmail"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Signup_Gmail"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Signup_Main"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Otp_Verification"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Signup_Mobile"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Login_Activity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.VideoRecording.VideoRecoderA"
+            android:exported="true" />
+        <activity
+            android:name=".MainMenu.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                tools:replace="android:resource" />
+        </provider>
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.AppCompat"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.VideoRecording.PreviewVideoA"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+    </application>
+
+</manifest>

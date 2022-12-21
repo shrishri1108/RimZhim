@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="320dp"
+        android:layout_height="380dp"
+        android:layout_gravity="center"
+        app:cardUseCompatPadding="true"
+        android:background="@drawable/large_round_white_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pop_up_img" />
+
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="180dp"
+            android:fontFamily="@font/segoeuib"
+            android:text="Logout"
+            android:textAlignment="center"
+            android:textColor="@color/pink"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/popupemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="220dp"
+            android:fontFamily="@font/segoeuib"
+            android:text="Are You Sure You Want To Logout"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/popupBTN"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="290dp"
+            android:background="@drawable/coustom_button_pass"
+            android:fontFamily="@font/segoeui"
+            android:gravity="center"
+            android:text="Logout "
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

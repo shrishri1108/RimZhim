@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "114540276726",
+    "project_id": "rimzhim-3ff4e",
+    "storage_bucket": "rimzhim-3ff4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114540276726:android:c82be219c560ed358cb5d7",
+        "android_client_info": {
+          "package_name": "com.rimzhim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114540276726-nsq6csa8nsf70dohsp3bdlgqspduhidp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW8La2_s2oJrJLUpgveaKTfufARdDrX34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114540276726-nsq6csa8nsf70dohsp3bdlgqspduhidp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

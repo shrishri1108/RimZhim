@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+   <!-- <include layout="@layout/partial_header" />-->
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/changebackIV"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/segoeuib"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/create_passwordTV"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/seguisb"
+            android:text="Create a Post"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/tag"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:importantForAutofill="no"
+                android:inputType="textLongMessage|textMultiLine"
+                android:hint="@string/tags_hint"
+                android:maxLines="4"
+                android:textSize="14sp"
+                tools:ignore="LabelFor"
+                />
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="top"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+      <!--  <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/content_language_spinner"
+                android:textColor="?colorOnSurface"
+                tools:ignore="RelativeOverlap" />
+
+            <Spinner
+                android:id="@+id/language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/private2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/privacy_switch" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/comments_switch" />-->
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:importantForAutofill="no"
+            android:inputType="textLongMessage|textMultiLine"
+            android:hint="@string/description_hint"
+            android:maxLines="4"
+            android:textSize="14sp"
+            tools:ignore="LabelFor"
+           />
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_200sdp"
+            android:orientation="horizontal"
+            android:gravity="center"
+           >
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkbox_meat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am completely responsible for this content"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
+            app:layout_constraintVertical_bias="0.462"
+            tools:layout_editor_absoluteX="0dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#2A2B39"
+                android:text="Save"
+                android:id="@+id/saveDraftBtn"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="20dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/pink"
+                android:text="Next"
+                android:id="@+id/postBtn"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="20dp" />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
